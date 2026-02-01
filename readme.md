@@ -1,0 +1,1 @@
+start learing full stack now focusing on backend
