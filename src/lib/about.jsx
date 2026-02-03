@@ -4,7 +4,49 @@ export async function getAboutData() {
   const baseUrl = process.env.NEXT_PUBLIC_STRAPI_URL;
   
   const query = qs.stringify({
-    populate: "*"
+    populate: {
+      aboutBlocks: {
+        on: {
+          "about.about-hero": {
+            populate: {
+              aboutBgimg: true,
+              img: true,
+              aboutCTA: true
+            }
+          },
+          "about.commitment": {
+            populate: {
+              imgSlider: true
+            }
+          },
+          "about.values": {
+             populate: {
+               valuesList: true
+             }
+          },
+          "about.approach": {
+            populate: {
+              img: true,
+              cards: {
+                populate: {
+                  icons: true
+                }
+              }
+            }
+          },
+          "about.partners": {
+            populate: {
+              icons: true
+            }
+          },
+          "about.team": {
+            populate: {
+              img: true
+            }
+          }
+        }
+      }
+    }
   }, { encodeValuesOnly: true });
 
   try {
