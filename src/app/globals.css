@@ -13,11 +13,11 @@
 }
 
 .animate-infinite-scroll-up {
-  animation: scroll-up 20s linear infinite;
+  animation: scroll-up 10s linear infinite;
 }
 
 .animate-infinite-scroll-down {
-  animation: scroll-down 25s linear infinite; /* Slightly different speed for variety */
+  animation: scroll-down 10s linear infinite; /* Slightly different speed for variety */
 }
 
 :root {

@@ -24,7 +24,7 @@ export default async function AboutPage() {
   }
 
   return (
-    <main className="font-sans antialiased text-slate-900 bg-white">
+    <main className="font-sans antialiased text-slate-900 w-full">
       {/* Dynamic Blocks */}
       {data.aboutBlocks.map((block, index) => {
         switch (block.__component) {

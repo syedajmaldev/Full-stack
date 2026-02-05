@@ -6,8 +6,6 @@ export default function AboutPartner({ title, description, icons }) {
   // Handle different Strapi response structures (nested data or direct array)
   const iconList = Array.isArray(icons?.data) ? icons.data : (Array.isArray(icons) ? icons : []);
 
-  console.log("AboutPartner processed icons:", iconList.length);
-
   // Split icons into two columns for the staggered layout
   // We'll just take the first half for left, second for right, or alternate
   // If we want a scrolling effect or static staggering
@@ -16,7 +14,7 @@ export default function AboutPartner({ title, description, icons }) {
   const col2 = iconList.slice(half);
 
   return (
-    <section className="relative w-full py-20 overflow-hidden bg-linear-to-br from-blue-50/50 via-white to-cyan-50/30">
+    <section className="relative  py-20 overflow-hidden  max-w-8xl mx-auto  bg-sky-100">
       
       {/* Background Decorative Blob */}
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-100/30 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
@@ -32,25 +30,21 @@ export default function AboutPartner({ title, description, icons }) {
                     <span className="text-blue-600 font-semibold text-sm tracking-wide">Partnership Network</span>
                  </div>
 
-                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-blue-600 tracking-tight">
+                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-600 tracking-tight">
                     {title || "Our Partners"}
                  </h2>
                  
-                 <p className="text-slate-500 text-xl md:text-2xl font-light leading-normal">
+                 <p className="text-slate-500 text-xl md:text-3xl font-medium leading-normal">
                     {description || "Build a strong network together"}
                  </p>
              </div>
 
              {/* Right Column: Staggered Logo Grid */}
              {/* We create a container that looks like the screenshot: two columns, shifting up/down */}
-             <div className="relative h-[600px] overflow-hidden mask-linear-gradient-to-b">
+             <div className="relative h-[500px] overflow-hidden mask-linear-gradient-to-b">
                  
                  {/* The two scrolling columns */}
-                 {/* If we want them to scroll nicely, we can add animation. 
-                     For now, let's just place them in a static staggered grid as per the static design request.
-                     If animation is needed later, we can add marquee classes.
-                  */}
-                 <div className="grid grid-cols-2 gap-6 h-full">
+                 <div className="grid grid-cols-2 gap-2 h-[100px]">
                      
                      {/* Column 1 - Scrolling Up */}
                      <div className="flex flex-col gap-6 animate-infinite-scroll-up">
@@ -67,9 +61,6 @@ export default function AboutPartner({ title, description, icons }) {
                      </div>
                  </div>
 
-                 {/* Top/Bottom Fade Masks */}
-                 <div className="absolute inset-x-0 top-0 h-24 bg-linear-to-b from-white to-transparent z-10" />
-                 <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-white to-transparent z-10" />
              </div>
         </div>
       </div>
@@ -83,8 +74,8 @@ function LogoCard({ icon }) {
     if (!url) return null;
 
     return (
-        <div className="w-full aspect-square bg-white rounded-4xl shadow-sm border border-slate-100 flex items-center justify-center p-8 hover:shadow-xl hover:scale-105 transition-all duration-300">
-             <div className="relative w-full h-full">
+        <div className="w-[50%] aspect-square bg-white rounded-3xl shadow-sm border border-slate-100 flex items-center justify-center p-4 hover:shadow-xl hover:scale-105 transition-all duration-300">
+             <div className="relative w-[90%] h-[90%]">
                  <Image 
                     src={url}
                     alt={icon.alternativeText || "Partner Logo"}

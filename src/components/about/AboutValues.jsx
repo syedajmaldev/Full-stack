@@ -4,12 +4,7 @@ export default function AboutValues({ title, description, valuesList }) {
   // If the data doesn't match perfectly, it will just show whatever letters are there.
   
   return (
-    <section className="bg-sky-50 py-16 lg:py-24 overflow-hidden relative">
-        {/* Background Pattern Dots - Optional subtle texture */}
-        <div className="absolute inset-0 z-0 opacity-10" 
-             style={{ backgroundImage: 'radial-gradient(circle, #0e7490 1px, transparent 1px)', backgroundSize: '30px 30px' }}>
-        </div>
-
+    <section className="bg-sky-50 py-6 lg:py-6 overflow-hidden relative">
         <div className="container relative z-10 px-4 md:px-6 mx-auto">
             
             {/* Header Content */}
@@ -20,12 +15,12 @@ export default function AboutValues({ title, description, valuesList }) {
                     <span className="text-blue-600 font-semibold text-xs tracking-wider uppercase">What Drives Us</span>
                  </div>
 
-                 <h2 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-linear-to-r from-sky-500 to-cyan-600">
+                 <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-linear-to-r from-sky-500 to-cyan-600">
                     {title || "Our Values"}
                  </h2>
                  
                  {description && (
-                    <p className="max-w-3xl text-slate-500 text-lg md:text-xl leading-relaxed">
+                    <p className="max-w-5xl text-slate-500 text-lg md:text-xl leading-relaxed">
                         {description}
                     </p>
                  )}
@@ -42,7 +37,7 @@ export default function AboutValues({ title, description, valuesList }) {
                             
                             {/* Big Letter Column */}
                             <div className="shrink-0 relative">
-                                <span className="block text-8xl md:text-9xl font-extrabold text-cyan-500/90 leading-none select-none transition-transform duration-500 group-hover:scale-110 group-hover:text-cyan-400">
+                                <span className="block text-8xl md:text-9xl font-bold text-cyan-500/90 leading-none select-none transition-transform duration-500 group-hover:scale-110 group-hover:text-cyan-400">
                                     {letter}
                                 </span>
                             </div>

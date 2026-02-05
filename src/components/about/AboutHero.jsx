@@ -12,7 +12,7 @@ export default function AboutHero({ title, description, aboutBgimg, img, aboutCT
   const highlightTitle = titleParts.length > 1 ? `with ${titleParts[1]}` : "";
 
   return (
-    <section className="relative w-full py-16 lg:py-24 overflow-hidden bg-slate-50">
+    <section className="relative py-6 lg:py-4 overflow-hidden ">
       {/* Background Image Layer */}
       {bgUrl && (
         <div className="absolute inset-0 w-full h-full z-0">
@@ -20,20 +20,20 @@ export default function AboutHero({ title, description, aboutBgimg, img, aboutCT
             src={bgUrl} 
             alt="Background pattern" 
             fill 
-            className="object-cover opacity-90 mix-blend-overlay"
+            className="object-cover opacity-100 mix-blend-overlay"
             priority
           />
         </div>
       )}
       
       {/* Background Gradient overlay */}
-      <div className="absolute inset-0 bg-linear-to-br from-blue-50/80 via-white/50 to-purple-50/50 z-0 pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-br pointer-events-none" />
 
-      <div className="container relative z-10 px-4 md:px-6 mx-auto">
+      <div className="container relative z-10 px-4 md:px-12 mx-auto">
         <div className="grid gap-12 lg:grid-cols-2 items-center">
           
           {/* Left Column: Content */}
-          <div className="flex flex-col justify-center items-start space-y-4 max-w-2xl">
+          <div className="flex flex-col justify-center items-start space-y-4 max-w-7xl pl-10 ">
             
             {/* Top Pill / Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-sm border border-slate-100 text-blue-600 font-medium text-sm">
@@ -43,7 +43,7 @@ export default function AboutHero({ title, description, aboutBgimg, img, aboutCT
 
             <div className="space-y-6">
                {/* Title */}
-               <h1 className="font-sans text-4xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 leading-[1.15]">
+               <h1 className="font-sans text-xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 leading-[1.15]">
                  {mainTitle}{" "}
                  {highlightTitle && (
                    <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-cyan-500">
@@ -59,17 +59,17 @@ export default function AboutHero({ title, description, aboutBgimg, img, aboutCT
                </div>
                
                {/* Description */}
-               <div className="text-lg md:text-xl text-slate-600 leading-relaxed font-normal">
+               <div className="text-lg md:text-xl text-slate-600 leading-normal font-normal">
                  <p>{description}</p>
                </div>
             </div>
 
             {/* CTA */}
             {aboutCTA && (
-                <div className="pt-2">
+                <div className="pt-2 px-6">
                   <Link
                     href={aboutCTA.href || aboutCTA.url || "#"} 
-                    className="inline-flex h-12 items-center justify-center rounded-full bg-linear-to-r from-blue-600 to-violet-600 px-8 text-base font-semibold text-white shadow-lg shadow-blue-600/20 transition-all hover:scale-105 hover:shadow-blue-600/30 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950"
+                    className="inline-flex h-12 items-center justify-center rounded-full bg-linear-to-r from-blue-600 to-violet-600 px-16 text-base font-semibold text-white shadow-lg shadow-blue-600/20 transition-all hover:scale-105 hover:shadow-blue-600/30 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950"
                   >
                     {aboutCTA.label}
                   </Link>
@@ -78,7 +78,7 @@ export default function AboutHero({ title, description, aboutBgimg, img, aboutCT
           </div>
           
           {/* Right Column: Creative Image Layout */}
-          <div className="relative flex items-center justify-center lg:justify-end mt-8 lg:mt-0">
+          <div className="relative flex items-center justify-center lg:justify-end mt-4 lg:mt-2">
              
              {/* Decorative Abstract Elements */}
              <div className="relative w-full max-w-[500px] aspect-square">
@@ -88,7 +88,7 @@ export default function AboutHero({ title, description, aboutBgimg, img, aboutCT
                 <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-blue-200/50 rounded-full blur-3xl" />
 
                 {/* Main Image Container */}
-                <div className="relative w-[400px] h-[400px] rounded-[40px] overflow-hidden shadow-2xl z-20 border-[6px] border-white/50">
+                <div className="relative w-[350px] h-[350px] rounded-[40px] overflow-hidden shadow-2xl ">
                     {imgUrl ? (
                          <Image
                            src={imgUrl}

@@ -4,8 +4,8 @@ export default function AboutApproach({ title, description, img, cards }) {
   const arrowImgUrl = img?.url ? `${process.env.NEXT_PUBLIC_STRAPI_URL}${img.url}` : null;
 
   return (
-    <section className="relative w-full py-16 lg:py-24 overflow-hidden bg-white">
-      <div className="container px-4 md:px-6 mx-auto">
+    <section className="relative py-6 lg:py-14 overflow-hidden bg-white">
+      <div className="container px-4 md:px-6 mx-auto max-w-7xl">
         
         {/* Header */}
         <div className="flex flex-col items-center text-center mb-16 space-y-4">
@@ -14,7 +14,7 @@ export default function AboutApproach({ title, description, img, cards }) {
                 <span className="text-blue-600 font-semibold text-xs tracking-wider uppercase">Behind Brand</span>
             </div>
             
-            <h2 className="text-3xl md:text-5xl font-bold text-cyan-500">
+            <h2 className="text-3xl md:text-4xl font-bold text-cyan-500">
                 {title || "Our Approach"}
             </h2>
 
@@ -26,7 +26,7 @@ export default function AboutApproach({ title, description, img, cards }) {
 
             {/* Approach Main Image */}
             {arrowImgUrl && (
-                <div className="relative w-full max-w-4xl h-[300px] mt-8">
+                <div className="relative w-[80%] max-w-4xl h-[300px] mt-0">
                      <Image 
                         src={arrowImgUrl}
                         alt="Approach Diagram"
@@ -38,7 +38,7 @@ export default function AboutApproach({ title, description, img, cards }) {
         </div>
 
         {/* Cards Grid */}
-        <div className="max-w-6xl mx-auto grid gap-8 md:grid-cols-2">
+        <div className="max-w-5xl mx-auto grid gap-8 md:grid-cols-2">
            {cards?.map((card, index) => (
               <ApproachCard key={index} card={card} index={index} />
            ))}
@@ -64,12 +64,12 @@ function ApproachCard({ card, index }) {
 
    return (
        <div 
-            className={`group relative p-8 rounded-3xl border transition-all duration-300 hover:shadow-lg ${colorClass}`}
+            className={`group relative px-4 py-2 rounded-3xl border transition-all duration-300 hover:shadow-lg ${colorClass}`}
        >
            <div className="flex flex-col items-start gap-6">
                
                {/* Icon Circle */}
-               <div className="relative flex items-center justify-center w-16 h-16 rounded-full bg-white/60 shadow-sm group-hover:scale-110 transition-transform duration-300">
+               <div className="relative flex items-center justify-center w-12 h-12 rounded-full bg-white/60 shadow-sm group-hover:scale-110 transition-transform duration-300">
                    {iconUrl ? (
                        <div className="relative w-10 h-10">
                            <Image 
@@ -85,8 +85,8 @@ function ApproachCard({ card, index }) {
                </div>
                
                {/* Text Content */}
-               <div className="space-y-3">
-                   <h3 className="text-2xl font-bold text-slate-800 tracking-tight">
+               <div className="space-y-1">
+                   <h3 className="text-xl font-bold text-slate-800 tracking-tight">
                        {card.title}
                     </h3>
                    <p className="text-slate-600 text-lg leading-relaxed">
